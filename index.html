@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css"> <!-- Vincula el archivo CSS -->
+    <script src="../js/Vue3.js"></script> <!-- Vincula Vue.js -->
+    <script src="../js/script.js" defer></script> <!-- Vincula el archivo JavaScript -->
+    <title>PROPS EN VUE</title>
+</head>
+<body>
+    <header>
+        <h1>PROPS EN VUE</h1>
+    </header>
+    
+    <section id="seccion">
+        <article>
+            <div class="contact-form">
+                <label>Nombre:</label>
+                <input type="text" v-model="nuevoContacto.nombre">
+                
+                <label>Teléfono:</label>
+                <input type="text" v-model="nuevoContacto.telefono">
+                
+                <label>Categoría:</label>
+                <select v-model="nuevoContacto.categoria">
+                    <option value=""></option>
+                    <option value="familiar">Familiar</option>
+                    <option value="amistad">Amistad</option>
+                    <option value="laboral">Laboral</option>
+                </select>
+                
+                <button @click="agregarContacto">Agregar</button>
+            </div>
+        </article>
+        
+        <article>
+            <h2>Contactos</h2>
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Categoría</th>
+                    <th>Mensajes</th>
+                    <th>Llamadas</th>
+                    <th></th>
+                </tr>
+                <tr v-for="(contacto, index) in contactos" :key="index">
+                    <td>{{ contacto.nombre }}</td>
+                    <td>{{ contacto.telefono }}</td>
+                    <td>{{ contacto.categoria }}</td>
+                    <td>
+                        <input type="number" v-model.number="contacto.mensajes" @input="validarLimites(contacto)" min="0" max="25">
+                    </td>
+                    <td>
+                        <input type="number" v-model.number="contacto.llamadas" @input="validarLimites(contacto)" min="0" max="15">
+                    </td>
+                    <td><button @click="eliminarContacto(index)">Borrar</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3" id="titulos">Total Mensajes:</td>
+                    <td id="totales">{{ totalMensajes }}</td>
+                    <td id="totales">{{ totalLlamadas }}</td>
+                    <td></td>
+                </tr>
+            </table>
+        </article>
+    </section>
+</body>
+</html>

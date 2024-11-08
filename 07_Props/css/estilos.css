@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #109c10;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 0px;
+}
+
+section {
+    background-color: #b2fca8;
+    padding: 10px;
+}
+
+article {
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.contact-form {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 1px solid #109c10;
+}
+
+.contact-form input,
+.contact-form select {
+    display: block;
+    margin: 0 auto 10px;
+    height: 30px;
+    font-size: 1.2rem;
+}
+
+button {
+    width: 100%;
+    padding: 5px;
+    background-color: #A52A2A;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+table {
+    margin: 0 auto;
+    width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+th {
+    background-color: #CDCDCD;
+    padding: 3px;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+td {
+    border-bottom: 2px solid #8080C0;
+    padding: 5px;
+    width: 200px;
+}
+
+#titulos {
+    text-align: right;
+}
+
+#totales {
+    text-align: left;
+}
